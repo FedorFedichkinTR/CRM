@@ -22,4 +22,6 @@ public class Item {
 
     private Integer initialPrice;
 
+    private Integer quantity;
+
 }
