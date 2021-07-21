@@ -3,6 +3,7 @@ package com.time.to.shop.crm.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Builder
 @Getter
@@ -23,5 +24,7 @@ public class Item {
     private Integer initialPrice;
 
     private Integer quantity;
+
+    private LocalDateTime dateOfPurchase;
 
 }
