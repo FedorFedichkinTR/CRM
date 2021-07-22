@@ -1,0 +1,4 @@
+# add new directories there
+databaseChangeLog:
+  - includeAll:
+      path: db/changelog/changeSets/

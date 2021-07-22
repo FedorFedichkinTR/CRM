@@ -17,7 +17,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "items_seq")
     @SequenceGenerator(name = "items_seq", sequenceName = "items_seq", allocationSize = 1)
-    private String ID;
+    private Long ID;
 
     private String name;
 
