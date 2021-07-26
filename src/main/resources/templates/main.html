@@ -9,11 +9,11 @@
 </head>
 
 <body>
-<h1>Welcome!</h1>
+<h1>Menu:</h1>
 <div>
     <sec:authorize access="isAuthenticated()">
-        <h4><a th:href="@{/news}">Новости (только пользователь)</a></h4>
-        <h4><a th:href="@{/admin}">Пользователи (только админ)</a></h4>
+        <h4><a th:href="@{/items/all}">All items in stock</a></h4>
+        <h4><a th:href="@{/admin}">Roles management (admins only)</a></h4>
     </sec:authorize>
 </div>
 </body>

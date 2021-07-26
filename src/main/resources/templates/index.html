@@ -12,14 +12,12 @@
 <h2>Welcome!</h2>
 <div>
     <sec:authorize access="!isAuthenticated()">
-        <h4><a th:href="@{/login}">Войти</a></h4>
-        <h4><a th:href="@{/registration}">Зарегистрироваться</a></h4>
+        <h4><a th:href="@{/login}">Log in</a></h4>
+        <h4><a th:href="@{/registration}">Sign up</a></h4>
     </sec:authorize>
     <sec:authorize access="isAuthenticated()">
-        <h4><a th:href="@{/logout}">Выйти</a></h4>
+        <h4><a th:href="@{/logout}">Log out</a></h4>
     </sec:authorize>
-    <h4><a th:href="@{/news}">Новости (только пользователь)</a></h4>
-    <h4><a th:href="@{/admin}">Пользователи (только админ)</a></h4>
 </div>
 </body>
 </html>

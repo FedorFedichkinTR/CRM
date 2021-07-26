@@ -3,7 +3,6 @@ package com.time.to.shop.crm.service;
 import com.time.to.shop.crm.model.db.Role;
 import com.time.to.shop.crm.model.db.User;
 import com.time.to.shop.crm.model.dto.LoginDTO;
-import com.time.to.shop.crm.repository.RoleRepository;
 import com.time.to.shop.crm.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,8 +20,6 @@ import java.util.Optional;
 public class UserService implements UserDetailsService {
     @PersistenceContext
     private EntityManager em;
-    @Autowired
-    RoleRepository roleRepository;
     @Autowired
     UserRepository userRepository;
     @Autowired
@@ -62,12 +58,7 @@ public class UserService implements UserDetailsService {
             return false;
         }
 
-        Optional<Role> roleFromDB = roleRepository.findById(2L);
-        if (roleFromDB.isPresent()) {
-            user.setRole(roleFromDB.get());
-        } else {
-            user.setRole(new Role(2L, "ROLE_USER"));
-        }
+        user.setRole(new Role(2L, "ROLE_USER"));
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         return true;
