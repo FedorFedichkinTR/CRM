@@ -6,11 +6,10 @@
 <head>
     <title>Spring Security Example</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/style.css">
 </head>
 
 <body>
-<h1>Welcome!</h1>
+<h2>Welcome!</h2>
 <div>
     <sec:authorize access="!isAuthenticated()">
         <h4><a th:href="@{/login}">Войти</a></h4>

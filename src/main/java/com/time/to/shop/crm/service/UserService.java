@@ -2,6 +2,7 @@ package com.time.to.shop.crm.service;
 
 import com.time.to.shop.crm.model.db.Role;
 import com.time.to.shop.crm.model.db.User;
+import com.time.to.shop.crm.model.dto.LoginDTO;
 import com.time.to.shop.crm.repository.RoleRepository;
 import com.time.to.shop.crm.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,12 @@ public class UserService implements UserDetailsService {
         }
 
         return user;
+    }
+
+    public boolean isUserPresentInDB(LoginDTO loginDTO) {
+        User userFromDb = (User) loadUserByUsername(loginDTO.getUsername());
+        String enteredPassword = loginDTO.getPassword();
+        return bCryptPasswordEncoder.encode(enteredPassword).equals(userFromDb.getPassword());
     }
 
     public User findUserById(Long userId) {
