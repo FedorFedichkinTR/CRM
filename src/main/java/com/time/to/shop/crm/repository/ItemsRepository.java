@@ -1,6 +1,6 @@
 package com.time.to.shop.crm.repository;
 
-import com.time.to.shop.crm.entity.Item;
+import com.time.to.shop.crm.model.db.Item;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

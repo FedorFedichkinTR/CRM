@@ -1,6 +1,6 @@
 package com.time.to.shop.crm.service;
 
-import com.time.to.shop.crm.entity.Item;
+import com.time.to.shop.crm.model.db.Item;
 import com.time.to.shop.crm.repository.ItemsRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

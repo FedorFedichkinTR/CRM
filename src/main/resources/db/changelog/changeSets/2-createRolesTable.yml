@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: "2"
+      author: FedorFedichkin
+      changes:
+        - createSequence:
+            startValue: 1
+            incrementBy: 1
+            sequenceName: roles_seq
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
