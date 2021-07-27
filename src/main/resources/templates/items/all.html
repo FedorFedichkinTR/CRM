@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <title>Log in with your account</title>
+    <title>All items</title>
 </head>
 
 <body>
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
 <div>
-    <form action="#" th:action="@{/items/all}" th:object="${items}" method="POST">
+    <form th:action="@{/items/all}" th:object="${items}" th:method="POST">
         <table>
             <thead>
             <tr><th>Item Name</th>

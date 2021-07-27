@@ -1,9 +1,11 @@
 package com.time.to.shop.crm.model.db;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Builder
 @Getter
@@ -21,7 +23,9 @@ public class Item {
     private String name;
     private Integer initialPrice;
     private Integer quantity;
-    private LocalDateTime dateOfPurchase;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dateOfPurchase;
     private String notes;
 
 }

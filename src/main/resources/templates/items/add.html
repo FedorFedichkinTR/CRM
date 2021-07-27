@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Add a new item</title>
+</head>
+
+<body>
+<div>
+    <form th:action="@{/items/add}" th:object="${item}" th:method="POST">
+        <table>
+            <label for="name">Enter Item Name:</label>
+            <input type="text" th:field="*{name}" id="name"/>
+            <br/>
+            <label for="price">Enter Initial Item Price:</label>
+            <input type="text" th:field="*{initialPrice}" id="price"/>
+            <br/>
+            <label for="quantity">Enter Item Quantity:</label>
+            <input type="text" th:field="*{quantity}" id="quantity"/>
+            <br/>
+            <label for="date">Enter Date of Purchase (YYYY-MM-DD):</label>
+            <input type="date" th:field="*{dateOfPurchase}" id="date"/>
+            <br/>
+            <label for="notes">Enter Notes:</label>
+            <input type="text" th:field="*{notes}" id="notes"/>
+            <br/>
+            <input type="submit" value="Create item"/>
+        </table>
+    </form>
+</div>
+</body>
+</html>

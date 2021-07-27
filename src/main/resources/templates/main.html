@@ -13,6 +13,7 @@
 <div>
     <sec:authorize access="isAuthenticated()">
         <h4><a th:href="@{/items/all}">All items in stock</a></h4>
+        <h4><a th:href="@{/items/add}">Add a new item</a></h4>
         <h4><a th:href="@{/admin}">Roles management (admins only)</a></h4>
     </sec:authorize>
 </div>
