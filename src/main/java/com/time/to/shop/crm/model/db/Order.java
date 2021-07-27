@@ -24,7 +24,9 @@ public class Order {
     private Integer quantity;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinTable(name = "customers",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "customer_id"))
     private Customer customer;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
