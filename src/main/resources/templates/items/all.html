@@ -30,11 +30,11 @@
                 <td colspan="2"> No Items Available </td>
             </tr>
             <tr th:each="item : ${items}">
-                <td><span th:text="${item.name}"> Title </span></td>
-                <td><span th:text="${item.initialPrice}"> Author </span></td>
-                <td><span th:text="${item.quantity}"> Author </span></td>
-                <td><span th:text="${item.dateOfPurchase}"> Author </span></td>
-                <td><span th:text="${item.notes}"> Author </span></td>
+                <td><span th:text="${item.name}"> Item Name </span></td>
+                <td><span th:text="${item.initialPrice}"> Initial Price </span></td>
+                <td><span th:text="${item.quantity}"> Quantity </span></td>
+                <td><span th:text="${item.dateOfPurchase}"> Date of Purchase </span></td>
+                <td><span th:text="${item.notes}"> Notes </span></td>
             </tr>
             </tbody>
         </table>
