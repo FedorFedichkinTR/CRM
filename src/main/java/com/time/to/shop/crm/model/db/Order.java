@@ -25,7 +25,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    private Long customerId;
+    private Customer customer;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date sellDate;
