@@ -28,3 +28,6 @@ databaseChangeLog:
               - column:
                   name: date_of_purchase
                   type: TIMESTAMP WITH TIME ZONE
+              - column:
+                  name: notes
+                  type: VARCHAR(255)
