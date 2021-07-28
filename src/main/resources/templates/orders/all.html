@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>All orders</title>
+</head>
+
+<body>
+<div>
+    <form th:action="@{/orders/all}" th:object="${orders}" th:method="POST">
+        <table>
+            <thead>
+            <tr><th>Item Name</th>
+                <th>Sale Price</th>
+                <th>Quantity</th>
+                <th>Date of Sale</th>
+                <th>Notes</th>
+                <th>Customer's Full Name</th>
+                <th>Customer's Phone Number</th>
+                <th>Customer's Address</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${orders.empty}">
+                <td colspan="2"> No Orders Available </td>
+            </tr>
+            <tr th:each="order : ${orders}">
+                <td><span th:text="${order.name}"> Item Name </span></td>
+                <td><span th:text="${order.salePrice}"> Sale Price </span></td>
+                <td><span th:text="${order.quantity}"> Quantity </span></td>
+                <td><span th:text="${order.saleDate}"> Date of Sale </span></td>
+                <td><span th:text="${order.notes}"> Notes </span></td>
+                <td><span th:text="${order.customer.fullName}"> Customer's Full Name </span></td>
+                <td><span th:text="${order.customer.phoneNumber}"> Customer's Phone Number </span></td>
+                <td><span th:text="${order.customer.address}"> Customer's Address </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+</html>
