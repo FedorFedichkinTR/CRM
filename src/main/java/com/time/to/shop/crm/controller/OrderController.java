@@ -1,5 +1,6 @@
 package com.time.to.shop.crm.controller;
 
+import com.time.to.shop.crm.model.db.Customer;
 import com.time.to.shop.crm.model.db.Item;
 import com.time.to.shop.crm.model.db.Order;
 import com.time.to.shop.crm.service.OrderService;
@@ -36,7 +37,9 @@ public class OrderController {
     }
 
     @PostMapping("/add")
-    public String addNewOrder(@ModelAttribute("order") Order order) {
+    public String addNewOrder(@ModelAttribute("order") Order order,
+                              @ModelAttribute("customer") Customer customer) {
+        order.setCustomer(customer);
         return Objects.nonNull(orderService.save(order)) ? "redirect:all" : "redirect:add";
     }
 }

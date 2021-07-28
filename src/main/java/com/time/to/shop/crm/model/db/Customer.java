@@ -20,5 +20,5 @@ public class Customer {
     private Long id;
     private String fullName;
     private String phoneNumber;
-    private String notes;
+    private String address;
 }

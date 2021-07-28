@@ -20,7 +20,7 @@ public class Order {
     @SequenceGenerator(name = "orders_seq", sequenceName = "orders_seq", allocationSize = 1)
     private Long id;
     private String name;
-    private Integer sellPrice;
+    private Integer salePrice;
     private Integer quantity;
 
     @ManyToOne
@@ -30,7 +30,7 @@ public class Order {
     private Customer customer;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date sellDate;
+    private Date saleDate;
     private String notes;
 
 }
