@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: "4"
+      author: FedorFedichkin
+      changes:
+        - createSequence:
+            startValue: 1
+            incrementBy: 1
+            sequenceName: customers_seq
+        - createTable:
+            tableName: customers
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: fullname
+                  type: VARCHAR(255)
+              - column:
+                  name: phoneNumber
+                  type: VARCHAR(255)
+              - column:
+                  name: address
+                  type: VARCHAR(255)

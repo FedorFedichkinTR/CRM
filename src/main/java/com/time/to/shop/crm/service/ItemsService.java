@@ -14,7 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemsService {
 
-    @NonNull
     private final ItemsRepository itemsRepository;
 
     public List<Item> findAllItems() {

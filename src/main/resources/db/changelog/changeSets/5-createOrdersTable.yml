@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: "5"
+      author: FedorFedichkin
+      changes:
+        - createSequence:
+            startValue: 1
+            incrementBy: 1
+            sequenceName: orders_seq
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: sale_price
+                  type: INT
+              - column:
+                  name: quantity
+                  type: INT
+              - column:
+                  name: customer_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: order_customer_id_fk
+                    references: customers(id)
+              - column:
+                  name: sale_date
+                  type: TIMESTAMP WITH TIME ZONE
+              - column:
+                  name: notes
+                  type: VARCHAR(255)

@@ -1,7 +1,6 @@
 package com.time.to.shop.crm.controller;
 
 import com.time.to.shop.crm.model.db.Customer;
-import com.time.to.shop.crm.model.db.Item;
 import com.time.to.shop.crm.model.db.Order;
 import com.time.to.shop.crm.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +21,7 @@ import java.util.Objects;
 @RequestMapping(value = "/orders", produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrderController {
 
-    private OrderService orderService;
+    private final OrderService orderService;
 
     @GetMapping("/all")
     public String displayAllItems(Model model) {
@@ -33,6 +32,7 @@ public class OrderController {
     @GetMapping("/add")
     public String addItem(Model model) {
         model.addAttribute("order", new Order());
+        model.addAttribute("customer", new Customer());
         return "orders/add";
     }
 

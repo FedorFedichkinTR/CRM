@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: "6"
+      author: FedorFedichkin
+      changes:
+        - sql:
+            sql: INSERT INTO roles VALUES (1, 'ROLE_ADMIN')
+        - sql:
+            sql: INSERT INTO roles VALUES (2, 'ROLE_USER')

@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,7 +18,6 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customers_seq")
     @SequenceGenerator(name = "customers_seq", sequenceName = "customers_seq", allocationSize = 1)
-    @OneToMany
     private Long id;
     private String fullName;
     private String phoneNumber;

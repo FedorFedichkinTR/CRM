@@ -23,10 +23,8 @@ public class Order {
     private Integer salePrice;
     private Integer quantity;
 
-    @ManyToOne
-    @JoinTable(name = "customers",
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "customer_id"))
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
