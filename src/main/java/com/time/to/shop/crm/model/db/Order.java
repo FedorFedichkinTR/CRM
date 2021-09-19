@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -28,7 +29,7 @@ public class Order {
     private Customer customer;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date saleDate;
+    private LocalDateTime saleDate;
     private String notes;
 
 }

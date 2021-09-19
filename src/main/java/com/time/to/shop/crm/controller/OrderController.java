@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Objects;
 
 @Slf4j
@@ -23,7 +25,6 @@ import java.util.Objects;
 public class OrderController {
 
     private final OrderService orderService;
-    private final CustomerService customerService;
 
     @GetMapping("/all")
     public String displayAllOrders(Model model) {
@@ -41,7 +42,6 @@ public class OrderController {
     @PostMapping("/add")
     public String addNewOrder(@ModelAttribute("order") Order order,
                               @ModelAttribute("customer") Customer customer) {
-        order.setCustomer(customerService.save(customer));
-        return Objects.nonNull(orderService.save(order)) ? "redirect:all" : "redirect:add";
+        return Objects.nonNull(orderService.saveOrderWithCustomer(order, customer)) ? "redirect:all" : "redirect:add";
     }
 }

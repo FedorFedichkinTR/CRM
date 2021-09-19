@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -22,7 +23,7 @@ public class Item {
     private Integer quantity;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dateOfPurchase;
+    private LocalDateTime dateOfPurchase;
     private String notes;
 
 }
