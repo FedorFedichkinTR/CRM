@@ -17,10 +17,10 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: fullname
+                  name: full_name
                   type: VARCHAR(255)
               - column:
-                  name: phoneNumber
+                  name: phone_number
                   type: VARCHAR(255)
               - column:
                   name: address

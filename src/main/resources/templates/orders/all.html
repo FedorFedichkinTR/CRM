@@ -31,9 +31,9 @@
                 <td><span th:text="${order.quantity}"> Quantity </span></td>
                 <td><span th:text="${order.saleDate}"> Date of Sale </span></td>
                 <td><span th:text="${order.notes}"> Notes </span></td>
-                <td><span th:text="${order.customer.fullName}"> Customer's Full Name </span></td>
-                <td><span th:text="${order.customer.phoneNumber}"> Customer's Phone Number </span></td>
-                <td><span th:text="${order.customer.address}"> Customer's Address </span></td>
+                <td><span th:text="${order?.customer.fullName}"> Customer's Full Name </span></td>
+                <td><span th:text="${order?.customer.phoneNumber}"> Customer's Phone Number </span></td>
+                <td><span th:text="${order?.customer.address}"> Customer's Address </span></td>
             </tr>
             </tbody>
         </table>

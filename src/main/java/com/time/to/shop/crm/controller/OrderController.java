@@ -2,6 +2,7 @@ package com.time.to.shop.crm.controller;
 
 import com.time.to.shop.crm.model.db.Customer;
 import com.time.to.shop.crm.model.db.Order;
+import com.time.to.shop.crm.service.CustomerService;
 import com.time.to.shop.crm.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,15 +23,16 @@ import java.util.Objects;
 public class OrderController {
 
     private final OrderService orderService;
+    private final CustomerService customerService;
 
     @GetMapping("/all")
-    public String displayAllItems(Model model) {
+    public String displayAllOrders(Model model) {
         model.addAttribute("orders", orderService.findAll());
         return "orders/all";
     }
 
     @GetMapping("/add")
-    public String addItem(Model model) {
+    public String addOrders(Model model) {
         model.addAttribute("order", new Order());
         model.addAttribute("customer", new Customer());
         return "orders/add";
@@ -39,7 +41,7 @@ public class OrderController {
     @PostMapping("/add")
     public String addNewOrder(@ModelAttribute("order") Order order,
                               @ModelAttribute("customer") Customer customer) {
-        order.setCustomer(customer);
+        order.setCustomer(customerService.save(customer));
         return Objects.nonNull(orderService.save(order)) ? "redirect:all" : "redirect:add";
     }
 }
